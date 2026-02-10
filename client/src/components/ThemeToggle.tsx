@@ -13,7 +13,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="relative flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-secondary/50 hover:bg-secondary transition-all duration-300 group"
-      aria-label={isDark ? "ライトモードに切替" : "ダークモードに切替"}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       <Sun
         size={14}

@@ -1,5 +1,5 @@
 /**
- * City data for シン・世界時計
+ * City data for Shin World Clock
  * Design: Observatory / Planetarium aesthetic
  * Comprehensive database of 50+ world cities with timezone, stats, news, and challenges
  * Users can search and select cities freely
@@ -7,10 +7,8 @@
 
 export interface CityInfo {
   id: string;
-  nameJa: string;
-  nameEn: string;
+  name: string;
   country: string;
-  countryJa: string;
   timezone: string;
   utcOffset: string;
   lat: number;
@@ -22,7 +20,7 @@ export interface CityInfo {
   news: string[];
   accentColor: string;
   flag: string;
-  /** Search keywords (hiragana, katakana, romaji, aliases) */
+  /** Search keywords (aliases, abbreviations) */
   searchKeys: string[];
 }
 
@@ -50,1151 +48,1072 @@ export const allCities: CityInfo[] = [
   // ===== ASIA =====
   {
     id: "tokyo",
-    nameJa: "東京",
-    nameEn: "Tokyo",
+    name: "Tokyo",
     country: "Japan",
-    countryJa: "日本",
     timezone: "Asia/Tokyo",
     utcOffset: "UTC+9",
     lat: 35.6762,
     lng: 139.6503,
     area: "2,194",
-    population: "1,404万人",
-    laborForce: "約810万人",
-    challenge: "少子高齢化と首都直下型地震への備え",
+    population: "14.04M",
+    laborForce: "~8.1M",
+    challenge: "Aging population and earthquake preparedness",
     news: [
-      "東京都の出生率が過去最低を更新、少子化対策の強化へ",
-      "2025年度予算案で防災インフラ整備に重点配分",
-      "都心部の再開発が加速、品川・渋谷エリアで大型プロジェクト"
+      "Tokyo's birth rate hits record low, prompting new policy measures",
+      "Major disaster infrastructure investment in FY2025 budget",
+      "Urban redevelopment accelerates in Shinagawa and Shibuya districts"
     ],
     accentColor: "oklch(0.65 0.20 15)",
     flag: "🇯🇵",
-    searchKeys: ["とうきょう", "トウキョウ", "tokyo", "東京都", "japan"]
+    searchKeys: ["tokyo", "japan", "jp"]
   },
   {
     id: "osaka",
-    nameJa: "大阪",
-    nameEn: "Osaka",
+    name: "Osaka",
     country: "Japan",
-    countryJa: "日本",
     timezone: "Asia/Tokyo",
     utcOffset: "UTC+9",
     lat: 34.6937,
     lng: 135.5023,
     area: "225",
-    population: "275万人",
-    laborForce: "約150万人",
-    challenge: "万博後の経済持続と南海トラフ地震対策",
+    population: "2.75M",
+    laborForce: "~1.5M",
+    challenge: "Post-Expo economic sustainability and earthquake risk",
     news: [
-      "2025年大阪・関西万博の来場者数が目標を上回るペース",
-      "うめきた2期エリアが全面開業、新たな都市拠点に",
-      "インバウンド観光客の急増で宿泊施設が不足"
+      "Expo 2025 visitor numbers on track to exceed targets",
+      "Umekita Phase 2 fully opens as new urban hub",
+      "Inbound tourism surge creates hotel shortage"
     ],
     accentColor: "oklch(0.70 0.16 55)",
     flag: "🇯🇵",
-    searchKeys: ["おおさか", "オオサカ", "osaka", "大阪市", "大阪府"]
+    searchKeys: ["osaka", "japan"]
   },
   {
     id: "seoul",
-    nameJa: "ソウル",
-    nameEn: "Seoul",
+    name: "Seoul",
     country: "South Korea",
-    countryJa: "韓国",
     timezone: "Asia/Seoul",
     utcOffset: "UTC+9",
     lat: 37.5665,
     lng: 126.9780,
     area: "605",
-    population: "950万人",
-    laborForce: "約530万人",
-    challenge: "住宅価格高騰と少子化の深刻化",
+    population: "9.5M",
+    laborForce: "~5.3M",
+    challenge: "Soaring housing prices and severe population decline",
     news: [
-      "ソウルの出生率が0.55に低下、世界最低水準を更新",
-      "半導体産業への大規模投資計画を発表",
-      "K-カルチャーの世界的影響力がさらに拡大"
+      "Seoul's fertility rate drops to 0.55, world's lowest",
+      "Major semiconductor investment plan announced",
+      "K-Culture's global influence continues to expand"
     ],
     accentColor: "oklch(0.65 0.18 250)",
     flag: "🇰🇷",
-    searchKeys: ["そうる", "ソウル", "seoul", "korea", "韓国"]
+    searchKeys: ["seoul", "korea", "south korea"]
   },
   {
     id: "beijing",
-    nameJa: "北京",
-    nameEn: "Beijing",
+    name: "Beijing",
     country: "China",
-    countryJa: "中国",
     timezone: "Asia/Shanghai",
     utcOffset: "UTC+8",
     lat: 39.9042,
     lng: 116.4074,
     area: "16,411",
-    population: "2,189万人",
-    laborForce: "約1,200万人",
-    challenge: "大気汚染と不動産市場の低迷",
+    population: "21.89M",
+    laborForce: "~12M",
+    challenge: "Air pollution and real estate market downturn",
     news: [
-      "北京のGDPが5兆元を突破、経済成長を維持",
-      "AI産業の育成に重点投資、テックハブ化が加速",
-      "冬季五輪施設の有効活用で観光振興を推進"
+      "Beijing GDP surpasses 5 trillion yuan, sustaining growth",
+      "Heavy investment in AI industry accelerates tech hub status",
+      "Winter Olympics venues repurposed for tourism promotion"
     ],
     accentColor: "oklch(0.65 0.20 15)",
     flag: "🇨🇳",
-    searchKeys: ["ぺきん", "ペキン", "beijing", "北京市", "中国", "china"]
+    searchKeys: ["beijing", "china", "peking"]
   },
   {
     id: "shanghai",
-    nameJa: "上海",
-    nameEn: "Shanghai",
+    name: "Shanghai",
     country: "China",
-    countryJa: "中国",
     timezone: "Asia/Shanghai",
     utcOffset: "UTC+8",
     lat: 31.2304,
     lng: 121.4737,
     area: "6,341",
-    population: "2,489万人",
-    laborForce: "約1,400万人",
-    challenge: "人口過密と環境汚染への対応",
+    population: "24.89M",
+    laborForce: "~14M",
+    challenge: "Overcrowding and environmental pollution",
     news: [
-      "上海自由貿易区の拡大で外国投資が増加",
-      "EV産業が急成長、世界最大の生産拠点に",
-      "浦東新区の再開発で国際金融センター機能を強化"
+      "Shanghai Free Trade Zone expansion attracts foreign investment",
+      "EV industry booms, becoming world's largest production hub",
+      "Pudong redevelopment strengthens international finance center"
     ],
     accentColor: "oklch(0.62 0.18 340)",
     flag: "🇨🇳",
-    searchKeys: ["しゃんはい", "シャンハイ", "shanghai", "上海市"]
+    searchKeys: ["shanghai", "china"]
   },
   {
     id: "hongkong",
-    nameJa: "香港",
-    nameEn: "Hong Kong",
+    name: "Hong Kong",
     country: "China (SAR)",
-    countryJa: "中国（特別行政区）",
     timezone: "Asia/Hong_Kong",
     utcOffset: "UTC+8",
     lat: 22.3193,
     lng: 114.1694,
     area: "1,114",
-    population: "750万人",
-    laborForce: "約390万人",
-    challenge: "政治的自治の縮小と人材流出",
+    population: "7.5M",
+    laborForce: "~3.9M",
+    challenge: "Declining political autonomy and talent exodus",
     news: [
-      "香港の金融市場が回復基調、IPO件数が増加",
-      "グレーターベイエリア構想で深圳との連携強化",
-      "観光業の回復が本格化、訪問者数がコロナ前水準に"
+      "Hong Kong financial markets recover, IPO numbers rise",
+      "Greater Bay Area initiative strengthens Shenzhen ties",
+      "Tourism recovery reaches pre-COVID levels"
     ],
     accentColor: "oklch(0.65 0.20 15)",
     flag: "🇭🇰",
-    searchKeys: ["ほんこん", "ホンコン", "hongkong", "hong kong", "香港"]
+    searchKeys: ["hong kong", "hongkong", "hk"]
   },
   {
     id: "taipei",
-    nameJa: "台北",
-    nameEn: "Taipei",
+    name: "Taipei",
     country: "Taiwan",
-    countryJa: "台湾",
     timezone: "Asia/Taipei",
     utcOffset: "UTC+8",
     lat: 25.0330,
     lng: 121.5654,
     area: "272",
-    population: "264万人",
-    laborForce: "約140万人",
-    challenge: "地震リスクと中国との緊張関係",
+    population: "2.64M",
+    laborForce: "~1.4M",
+    challenge: "Earthquake risk and cross-strait tensions",
     news: [
-      "台湾の半導体産業が世界シェアを拡大",
-      "台北メトロの新路線が開業、交通利便性が向上",
-      "再生可能エネルギーへの転換を加速"
+      "Taiwan's semiconductor industry expands global market share",
+      "New Taipei Metro line opens, improving transit access",
+      "Accelerating transition to renewable energy"
     ],
     accentColor: "oklch(0.60 0.15 145)",
     flag: "🇹🇼",
-    searchKeys: ["たいぺい", "タイペイ", "taipei", "台北市", "台湾", "taiwan"]
+    searchKeys: ["taipei", "taiwan"]
   },
   {
     id: "singapore",
-    nameJa: "シンガポール",
-    nameEn: "Singapore",
+    name: "Singapore",
     country: "Singapore",
-    countryJa: "シンガポール",
     timezone: "Asia/Singapore",
     utcOffset: "UTC+8",
     lat: 1.3521,
     lng: 103.8198,
     area: "734",
-    population: "564万人",
-    laborForce: "約370万人",
-    challenge: "国土の狭さと外国人労働者への依存",
+    population: "5.64M",
+    laborForce: "~3.7M",
+    challenge: "Limited land area and dependence on foreign labor",
     news: [
-      "シンガポール、世界都市ランキングで5位を維持",
-      "グリーンファイナンスのハブとして存在感を強化",
-      "AI・デジタル経済への投資を大幅拡大"
+      "Singapore maintains top 5 in global city rankings",
+      "Strengthening position as green finance hub",
+      "Major expansion of AI and digital economy investments"
     ],
     accentColor: "oklch(0.65 0.20 15)",
     flag: "🇸🇬",
-    searchKeys: ["しんがぽーる", "シンガポール", "singapore"]
+    searchKeys: ["singapore", "sg"]
   },
   {
     id: "bangkok",
-    nameJa: "バンコク",
-    nameEn: "Bangkok",
+    name: "Bangkok",
     country: "Thailand",
-    countryJa: "タイ",
     timezone: "Asia/Bangkok",
     utcOffset: "UTC+7",
     lat: 13.7563,
     lng: 100.5018,
     area: "1,569",
-    population: "1,057万人",
-    laborForce: "約580万人",
-    challenge: "洪水リスクと交通渋滞の深刻化",
+    population: "10.57M",
+    laborForce: "~5.8M",
+    challenge: "Flood risk and severe traffic congestion",
     news: [
-      "バンコクの観光業が完全回復、過去最高の訪問者数",
-      "BTS・MRTの延伸で都市交通網が拡大",
-      "デジタルノマドの聖地として世界的に人気上昇"
+      "Bangkok tourism fully recovers, hitting record visitor numbers",
+      "BTS and MRT extensions expand urban transit network",
+      "Rising global popularity as a digital nomad destination"
     ],
     accentColor: "oklch(0.70 0.16 55)",
     flag: "🇹🇭",
-    searchKeys: ["ばんこく", "バンコク", "bangkok", "タイ", "thailand"]
+    searchKeys: ["bangkok", "thailand"]
   },
   {
     id: "mumbai",
-    nameJa: "ムンバイ",
-    nameEn: "Mumbai",
+    name: "Mumbai",
     country: "India",
-    countryJa: "インド",
     timezone: "Asia/Kolkata",
     utcOffset: "UTC+5:30",
     lat: 19.0760,
     lng: 72.8777,
     area: "603",
-    population: "2,094万人",
-    laborForce: "約900万人",
-    challenge: "スラム問題と深刻な大気汚染",
+    population: "20.94M",
+    laborForce: "~9M",
+    challenge: "Slum conditions and severe air pollution",
     news: [
-      "ムンバイの金融市場が活況、外国投資が急増",
-      "メトロ新路線の開業で交通インフラが改善",
-      "ボリウッド映画産業が国際的な影響力を拡大"
+      "Mumbai financial markets surge with rising foreign investment",
+      "New metro lines improve transportation infrastructure",
+      "Bollywood expands international influence"
     ],
     accentColor: "oklch(0.70 0.16 55)",
     flag: "🇮🇳",
-    searchKeys: ["むんばい", "ムンバイ", "mumbai", "インド", "india", "ボンベイ", "bombay"]
+    searchKeys: ["mumbai", "india", "bombay"]
   },
   {
     id: "delhi",
-    nameJa: "デリー",
-    nameEn: "Delhi",
+    name: "Delhi",
     country: "India",
-    countryJa: "インド",
     timezone: "Asia/Kolkata",
     utcOffset: "UTC+5:30",
     lat: 28.7041,
     lng: 77.1025,
     area: "1,484",
-    population: "3,290万人",
-    laborForce: "約1,500万人",
-    challenge: "世界最悪レベルの大気汚染と水不足",
+    population: "32.9M",
+    laborForce: "~15M",
+    challenge: "World's worst air pollution and water scarcity",
     news: [
-      "デリーの大気汚染対策として電気バスを大量導入",
-      "インドのIT産業成長がデリー経済を牽引",
-      "新都市計画で緑地面積の拡大を推進"
+      "Delhi deploys electric buses en masse to combat air pollution",
+      "India's IT industry growth drives Delhi economy",
+      "New urban plan expands green spaces across the city"
     ],
     accentColor: "oklch(0.72 0.15 80)",
     flag: "🇮🇳",
-    searchKeys: ["でりー", "デリー", "delhi", "ニューデリー", "new delhi", "インド", "india"]
+    searchKeys: ["delhi", "new delhi", "india"]
+  },
+  {
+    id: "bangalore",
+    name: "Bangalore",
+    country: "India",
+    timezone: "Asia/Kolkata",
+    utcOffset: "UTC+5:30",
+    lat: 12.9716,
+    lng: 77.5946,
+    area: "741",
+    population: "13.2M",
+    laborForce: "~6.5M",
+    challenge: "Water crisis and rapid unplanned urbanization",
+    news: [
+      "Bangalore cements its status as India's Silicon Valley with record startup funding",
+      "Metro Phase 2 expansion aims to ease chronic traffic congestion",
+      "Tech giants expand campuses as AI talent demand surges"
+    ],
+    accentColor: "oklch(0.60 0.16 120)",
+    flag: "🇮🇳",
+    searchKeys: ["bangalore", "bengaluru", "india", "silicon valley of india"]
   },
   {
     id: "jakarta",
-    nameJa: "ジャカルタ",
-    nameEn: "Jakarta",
+    name: "Jakarta",
     country: "Indonesia",
-    countryJa: "インドネシア",
     timezone: "Asia/Jakarta",
     utcOffset: "UTC+7",
     lat: -6.2088,
     lng: 106.8456,
     area: "662",
-    population: "4,200万人",
-    laborForce: "約2,000万人",
-    challenge: "地盤沈下と首都移転計画の遅延",
+    population: "42M",
+    laborForce: "~20M",
+    challenge: "Land subsidence and capital relocation delays",
     news: [
-      "ジャカルタが世界人口最多都市に（国連報告）",
-      "新首都ヌサンタラへの移転計画が進行中",
-      "デジタル経済の急成長で東南アジアのハブに"
+      "Jakarta named world's most populous city (UN report)",
+      "New capital Nusantara relocation plan progresses",
+      "Digital economy boom positions city as Southeast Asian hub"
     ],
     accentColor: "oklch(0.65 0.20 15)",
     flag: "🇮🇩",
-    searchKeys: ["じゃかるた", "ジャカルタ", "jakarta", "インドネシア", "indonesia"]
+    searchKeys: ["jakarta", "indonesia"]
   },
   // ===== MIDDLE EAST =====
   {
     id: "dubai",
-    nameJa: "ドバイ",
-    nameEn: "Dubai",
+    name: "Dubai",
     country: "UAE",
-    countryJa: "アラブ首長国連邦",
     timezone: "Asia/Dubai",
     utcOffset: "UTC+4",
     lat: 25.2048,
     lng: 55.2708,
     area: "4,114",
-    population: "367万人",
-    laborForce: "約250万人",
-    challenge: "外国人労働者への依存と猛暑対策",
+    population: "3.67M",
+    laborForce: "~2.5M",
+    challenge: "Dependence on foreign labor and extreme heat",
     news: [
-      "ドバイ、世界都市パワーインデックスで4位に躍進",
-      "超高級不動産市場が活況、メガディール件数が過去最高",
-      "AI・スマートシティ構想で中東のテックハブ化が加速"
+      "Dubai jumps to 4th in Global City Power Index",
+      "Ultra-luxury real estate market booms with record mega-deals",
+      "AI and smart city initiative accelerates Middle East tech hub status"
     ],
     accentColor: "oklch(0.70 0.16 55)",
     flag: "🇦🇪",
-    searchKeys: ["どばい", "ドバイ", "dubai", "UAE", "アラブ"]
+    searchKeys: ["dubai", "uae", "united arab emirates"]
   },
   {
     id: "istanbul",
-    nameJa: "イスタンブール",
-    nameEn: "Istanbul",
+    name: "Istanbul",
     country: "Turkey",
-    countryJa: "トルコ",
     timezone: "Europe/Istanbul",
     utcOffset: "UTC+3",
     lat: 41.0082,
     lng: 28.9784,
     area: "5,461",
-    population: "1,584万人",
-    laborForce: "約800万人",
-    challenge: "地震リスクとインフレーション",
+    population: "15.84M",
+    laborForce: "~8M",
+    challenge: "Earthquake risk and high inflation",
     news: [
-      "イスタンブール、世界で最も訪問者の多い都市トップ5入り",
-      "新イスタンブール空港の利用者数が急増",
-      "歴史的建造物の修復プロジェクトが進行中"
+      "Istanbul enters top 5 most-visited cities worldwide",
+      "New Istanbul Airport sees rapid passenger growth",
+      "Historic building restoration projects underway"
     ],
     accentColor: "oklch(0.62 0.18 340)",
     flag: "🇹🇷",
-    searchKeys: ["いすたんぶーる", "イスタンブール", "istanbul", "トルコ", "turkey"]
+    searchKeys: ["istanbul", "turkey", "turkiye"]
   },
   // ===== EUROPE =====
   {
     id: "london",
-    nameJa: "ロンドン",
-    nameEn: "London",
+    name: "London",
     country: "United Kingdom",
-    countryJa: "イギリス",
     timezone: "Europe/London",
     utcOffset: "UTC+0",
     lat: 51.5074,
     lng: -0.1278,
     area: "1,572",
-    population: "961万人",
-    laborForce: "約520万人",
-    challenge: "Brexit後の経済調整と住宅不足",
+    population: "9.61M",
+    laborForce: "~5.2M",
+    challenge: "Post-Brexit economic adjustment and housing shortage",
     news: [
-      "ロンドン、世界都市ランキングで首位を維持",
-      "テムズ川沿いのグリーンインフラ整備が本格化",
-      "フィンテック分野で欧州最大の投資額を記録"
+      "London maintains top position in global city rankings",
+      "Thames-side green infrastructure development ramps up",
+      "Fintech sector records Europe's largest investment volume"
     ],
     accentColor: "oklch(0.60 0.15 145)",
     flag: "🇬🇧",
-    searchKeys: ["ろんどん", "ロンドン", "london", "イギリス", "UK", "england"]
+    searchKeys: ["london", "uk", "england", "united kingdom"]
   },
   {
     id: "paris",
-    nameJa: "パリ",
-    nameEn: "Paris",
+    name: "Paris",
     country: "France",
-    countryJa: "フランス",
     timezone: "Europe/Paris",
     utcOffset: "UTC+1",
     lat: 48.8566,
     lng: 2.3522,
     area: "105",
-    population: "215万人",
-    laborForce: "約120万人",
-    challenge: "大気汚染と交通渋滞の慢性化",
+    population: "2.15M",
+    laborForce: "~1.2M",
+    challenge: "Air pollution and chronic traffic congestion",
     news: [
-      "パリ五輪のレガシー施設が市民に開放、スポーツ振興へ",
-      "15分都市構想の実現に向けた都市改造が進行中",
-      "外国企業の対仏投資が政治不安の中でも堅調に推移"
+      "Olympic legacy venues open to public, boosting sports culture",
+      "15-minute city concept drives major urban transformation",
+      "Foreign corporate investment remains strong despite political uncertainty"
     ],
     accentColor: "oklch(0.65 0.18 300)",
     flag: "🇫🇷",
-    searchKeys: ["ぱり", "パリ", "paris", "フランス", "france"]
+    searchKeys: ["paris", "france"]
   },
   {
     id: "berlin",
-    nameJa: "ベルリン",
-    nameEn: "Berlin",
+    name: "Berlin",
     country: "Germany",
-    countryJa: "ドイツ",
     timezone: "Europe/Berlin",
     utcOffset: "UTC+1",
     lat: 52.5200,
     lng: 13.4050,
     area: "892",
-    population: "376万人",
-    laborForce: "約200万人",
-    challenge: "住宅不足とエネルギー転換の課題",
+    population: "3.76M",
+    laborForce: "~2M",
+    challenge: "Housing shortage and energy transition challenges",
     news: [
-      "ベルリンのスタートアップエコシステムが欧州トップ3に",
-      "再生可能エネルギー比率が50%を突破",
-      "文化・アート産業が都市経済の柱として成長"
+      "Berlin's startup ecosystem ranks among Europe's top 3",
+      "Renewable energy share surpasses 50%",
+      "Culture and arts industry grows as economic pillar"
     ],
     accentColor: "oklch(0.72 0.15 80)",
     flag: "🇩🇪",
-    searchKeys: ["べるりん", "ベルリン", "berlin", "ドイツ", "germany"]
+    searchKeys: ["berlin", "germany"]
   },
   {
     id: "madrid",
-    nameJa: "マドリード",
-    nameEn: "Madrid",
+    name: "Madrid",
     country: "Spain",
-    countryJa: "スペイン",
     timezone: "Europe/Madrid",
     utcOffset: "UTC+1",
     lat: 40.4168,
     lng: -3.7038,
     area: "604",
-    population: "334万人",
-    laborForce: "約180万人",
-    challenge: "若年層の高い失業率と水不足",
+    population: "3.34M",
+    laborForce: "~1.8M",
+    challenge: "High youth unemployment and water scarcity",
     news: [
-      "マドリード、欧州のテック投資先として注目度上昇",
-      "再開発プロジェクトで都市の近代化が進行",
-      "観光業が過去最高の収益を記録"
+      "Madrid gains attention as European tech investment destination",
+      "Redevelopment projects modernize the city",
+      "Tourism industry records highest-ever revenue"
     ],
     accentColor: "oklch(0.65 0.20 15)",
     flag: "🇪🇸",
-    searchKeys: ["まどりーど", "マドリード", "madrid", "スペイン", "spain"]
+    searchKeys: ["madrid", "spain"]
   },
   {
     id: "rome",
-    nameJa: "ローマ",
-    nameEn: "Rome",
+    name: "Rome",
     country: "Italy",
-    countryJa: "イタリア",
     timezone: "Europe/Rome",
     utcOffset: "UTC+1",
     lat: 41.9028,
     lng: 12.4964,
     area: "1,285",
-    population: "287万人",
-    laborForce: "約140万人",
-    challenge: "インフラの老朽化と財政赤字",
+    population: "2.87M",
+    laborForce: "~1.4M",
+    challenge: "Aging infrastructure and fiscal deficit",
     news: [
-      "ローマ、2025年聖年で巡礼者が大幅増加",
-      "コロッセオ周辺の歩行者天国化計画が進行",
-      "イタリアのファッション産業がデジタル化を加速"
+      "Rome sees major pilgrim increase during 2025 Jubilee Year",
+      "Colosseum pedestrian zone expansion plan progresses",
+      "Italian fashion industry accelerates digital transformation"
     ],
     accentColor: "oklch(0.70 0.16 55)",
     flag: "🇮🇹",
-    searchKeys: ["ろーま", "ローマ", "rome", "イタリア", "italy"]
+    searchKeys: ["rome", "italy", "roma"]
   },
   {
     id: "amsterdam",
-    nameJa: "アムステルダム",
-    nameEn: "Amsterdam",
+    name: "Amsterdam",
     country: "Netherlands",
-    countryJa: "オランダ",
     timezone: "Europe/Amsterdam",
     utcOffset: "UTC+1",
     lat: 52.3676,
     lng: 4.9041,
     area: "219",
-    population: "92万人",
-    laborForce: "約50万人",
-    challenge: "住宅価格の高騰と観光公害",
+    population: "920K",
+    laborForce: "~500K",
+    challenge: "Soaring housing prices and overtourism",
     news: [
-      "アムステルダム、自転車インフラで世界をリード",
-      "オーバーツーリズム対策として宿泊税を引き上げ",
-      "サステナブル都市ランキングで上位を維持"
+      "Amsterdam leads the world in cycling infrastructure",
+      "Tourist tax raised to combat overtourism",
+      "Maintains top position in sustainable city rankings"
     ],
     accentColor: "oklch(0.65 0.18 250)",
     flag: "🇳🇱",
-    searchKeys: ["あむすてるだむ", "アムステルダム", "amsterdam", "オランダ", "netherlands"]
+    searchKeys: ["amsterdam", "netherlands", "holland"]
   },
   {
     id: "moscow",
-    nameJa: "モスクワ",
-    nameEn: "Moscow",
+    name: "Moscow",
     country: "Russia",
-    countryJa: "ロシア",
     timezone: "Europe/Moscow",
     utcOffset: "UTC+3",
     lat: 55.7558,
     lng: 37.6173,
     area: "2,562",
-    population: "1,262万人",
-    laborForce: "約700万人",
-    challenge: "国際的孤立と経済制裁の影響",
+    population: "12.62M",
+    laborForce: "~7M",
+    challenge: "International isolation and economic sanctions",
     news: [
-      "モスクワの都市開発プロジェクトが継続中",
-      "ロシアのIT人材の国外流出が加速",
-      "地下鉄網の拡張で交通利便性が向上"
+      "Moscow urban development projects continue",
+      "Russian IT talent exodus accelerates",
+      "Metro network expansion improves transit access"
     ],
     accentColor: "oklch(0.62 0.18 340)",
     flag: "🇷🇺",
-    searchKeys: ["もすくわ", "モスクワ", "moscow", "ロシア", "russia"]
+    searchKeys: ["moscow", "russia"]
   },
   {
     id: "zurich",
-    nameJa: "チューリッヒ",
-    nameEn: "Zurich",
+    name: "Zurich",
     country: "Switzerland",
-    countryJa: "スイス",
     timezone: "Europe/Zurich",
     utcOffset: "UTC+1",
     lat: 47.3769,
     lng: 8.5417,
     area: "88",
-    population: "43万人",
-    laborForce: "約25万人",
-    challenge: "生活コストの高さと住宅不足",
+    population: "430K",
+    laborForce: "~250K",
+    challenge: "Extremely high cost of living and housing shortage",
     news: [
-      "チューリッヒ、世界で最も住みやすい都市トップ3に",
-      "フィンテック・暗号資産産業が成長を継続",
-      "持続可能な都市開発で国際的な模範に"
+      "Zurich ranks in world's top 3 most livable cities",
+      "Fintech and crypto industry continues to grow",
+      "Sets international standard for sustainable urban development"
     ],
     accentColor: "oklch(0.60 0.15 145)",
     flag: "🇨🇭",
-    searchKeys: ["ちゅーりっひ", "チューリッヒ", "zurich", "スイス", "switzerland"]
+    searchKeys: ["zurich", "switzerland"]
   },
   {
     id: "stockholm",
-    nameJa: "ストックホルム",
-    nameEn: "Stockholm",
+    name: "Stockholm",
     country: "Sweden",
-    countryJa: "スウェーデン",
     timezone: "Europe/Stockholm",
     utcOffset: "UTC+1",
     lat: 59.3293,
     lng: 18.0686,
     area: "188",
-    population: "98万人",
-    laborForce: "約55万人",
-    challenge: "移民統合と冬季の日照不足",
+    population: "980K",
+    laborForce: "~550K",
+    challenge: "Immigrant integration and winter daylight scarcity",
     news: [
-      "ストックホルム、ユニコーン企業の輩出率で世界2位",
-      "カーボンニュートラル目標の達成に向け順調に進行",
-      "北欧デザインの国際的影響力がさらに拡大"
+      "Stockholm ranks 2nd globally for unicorn production rate",
+      "On track to meet carbon neutrality goals",
+      "Nordic design's international influence continues to grow"
     ],
     accentColor: "oklch(0.68 0.14 220)",
     flag: "🇸🇪",
-    searchKeys: ["すとっくほるむ", "ストックホルム", "stockholm", "スウェーデン", "sweden"]
+    searchKeys: ["stockholm", "sweden"]
   },
   // ===== NORTH AMERICA =====
   {
     id: "newyork",
-    nameJa: "ニューヨーク",
-    nameEn: "New York",
+    name: "New York",
     country: "United States",
-    countryJa: "アメリカ",
     timezone: "America/New_York",
     utcOffset: "UTC-5",
     lat: 40.7128,
     lng: -74.0060,
     area: "783",
-    population: "841万人",
-    laborForce: "約430万人",
-    challenge: "住宅価格の高騰とホームレス問題",
+    population: "8.41M",
+    laborForce: "~4.3M",
+    challenge: "Soaring housing costs and homelessness crisis",
     news: [
-      "マンハッタンのオフィス回帰率が70%を超え、経済活性化の兆し",
-      "地下鉄システムの大規模近代化計画を発表",
-      "AI産業の集積が進み、テック企業の雇用が急増"
+      "Manhattan office return rate exceeds 70%, signaling economic revival",
+      "Major subway modernization plan announced",
+      "AI industry cluster grows, tech hiring surges"
     ],
     accentColor: "oklch(0.65 0.18 250)",
     flag: "🇺🇸",
-    searchKeys: ["にゅーよーく", "ニューヨーク", "newyork", "new york", "NYC", "アメリカ"]
+    searchKeys: ["new york", "newyork", "nyc", "usa"]
   },
   {
     id: "losangeles",
-    nameJa: "ロサンゼルス",
-    nameEn: "Los Angeles",
+    name: "Los Angeles",
     country: "United States",
-    countryJa: "アメリカ",
     timezone: "America/Los_Angeles",
     utcOffset: "UTC-8",
     lat: 34.0522,
     lng: -118.2437,
     area: "1,302",
-    population: "397万人",
-    laborForce: "約210万人",
-    challenge: "山火事リスクと水不足、ホームレス問題",
+    population: "3.97M",
+    laborForce: "~2.1M",
+    challenge: "Wildfire risk, water scarcity, and homelessness",
     news: [
-      "ロサンゼルスの山火事被害が拡大、復興計画を策定",
-      "2028年オリンピックに向けたインフラ整備が加速",
-      "エンターテインメント産業がAI技術を積極導入"
+      "LA wildfire damage expands, recovery plans drafted",
+      "Infrastructure upgrades accelerate ahead of 2028 Olympics",
+      "Entertainment industry embraces AI technology"
     ],
     accentColor: "oklch(0.72 0.15 80)",
     flag: "🇺🇸",
-    searchKeys: ["ろさんぜるす", "ロサンゼルス", "losangeles", "los angeles", "LA"]
+    searchKeys: ["los angeles", "losangeles", "la", "usa"]
   },
   {
     id: "seattle",
-    nameJa: "シアトル",
-    nameEn: "Seattle",
+    name: "Seattle",
     country: "United States",
-    countryJa: "アメリカ",
     timezone: "America/Los_Angeles",
     utcOffset: "UTC-8",
     lat: 47.6062,
     lng: -122.3321,
     area: "369",
-    population: "75万人",
-    laborForce: "約45万人",
-    challenge: "住宅価格の急騰とホームレス問題",
+    population: "750K",
+    laborForce: "~450K",
+    challenge: "Surging housing prices and homelessness",
     news: [
-      "Amazon・Microsoftの本社があるテックハブとして成長継続",
-      "シアトルの住宅価格が全米トップクラスの上昇率",
-      "グリーンエネルギー政策で2030年カーボンニュートラルを目指す"
+      "Amazon and Microsoft HQs drive continued tech hub growth",
+      "Seattle housing prices among highest in the nation",
+      "Green energy policy targets carbon neutrality by 2030"
     ],
     accentColor: "oklch(0.60 0.15 145)",
     flag: "🇺🇸",
-    searchKeys: ["しあとる", "シアトル", "seattle", "ワシントン州"]
+    searchKeys: ["seattle", "washington state", "usa"]
   },
   {
     id: "phoenix",
-    nameJa: "フェニックス",
-    nameEn: "Phoenix",
+    name: "Phoenix",
     country: "United States",
-    countryJa: "アメリカ",
     timezone: "America/Phoenix",
     utcOffset: "UTC-7",
     lat: 33.4484,
     lng: -112.0740,
     area: "1,341",
-    population: "173万人",
-    laborForce: "約90万人",
-    challenge: "極端な猛暑と水資源の枯渇リスク",
+    population: "1.73M",
+    laborForce: "~900K",
+    challenge: "Extreme heat and water resource depletion risk",
     news: [
-      "フェニックスの人口増加率が全米トップクラス",
-      "半導体工場の誘致に成功、TSMCの新工場が稼働開始",
-      "猛暑対策として都市緑化プロジェクトを大規模展開"
+      "Phoenix population growth rate among highest in the US",
+      "TSMC new fab begins operations after successful recruitment",
+      "Large-scale urban greening project launched to combat heat"
     ],
     accentColor: "oklch(0.70 0.16 55)",
     flag: "🇺🇸",
-    searchKeys: ["ふぇにっくす", "フェニックス", "phoenix", "アリゾナ", "arizona"]
+    searchKeys: ["phoenix", "arizona", "usa"]
   },
   {
     id: "chicago",
-    nameJa: "シカゴ",
-    nameEn: "Chicago",
+    name: "Chicago",
     country: "United States",
-    countryJa: "アメリカ",
     timezone: "America/Chicago",
     utcOffset: "UTC-6",
     lat: 41.8781,
     lng: -87.6298,
     area: "606",
-    population: "269万人",
-    laborForce: "約140万人",
-    challenge: "銃犯罪の多さと人口減少",
+    population: "2.69M",
+    laborForce: "~1.4M",
+    challenge: "Gun violence and population decline",
     news: [
-      "シカゴの建築ツアーが世界的な観光資源として注目",
-      "グリーンインフラ投資で都市の持続可能性を強化",
-      "金融・商品取引の中心地としての地位を維持"
+      "Chicago architecture tours gain global tourism recognition",
+      "Green infrastructure investment strengthens sustainability",
+      "Maintains position as financial and commodities trading center"
     ],
     accentColor: "oklch(0.68 0.14 220)",
     flag: "🇺🇸",
-    searchKeys: ["しかご", "シカゴ", "chicago", "イリノイ"]
+    searchKeys: ["chicago", "illinois", "usa"]
   },
   {
     id: "sanfrancisco",
-    nameJa: "サンフランシスコ",
-    nameEn: "San Francisco",
+    name: "San Francisco",
     country: "United States",
-    countryJa: "アメリカ",
     timezone: "America/Los_Angeles",
     utcOffset: "UTC-8",
     lat: 37.7749,
     lng: -122.4194,
     area: "121",
-    population: "87万人",
-    laborForce: "約50万人",
-    challenge: "生活コストの高さとテック企業の流出",
+    population: "870K",
+    laborForce: "~500K",
+    challenge: "High cost of living and tech company exodus",
     news: [
-      "AI産業の中心地として世界中から投資が集中",
-      "ダウンタウンの空室率改善に向けた再活性化計画",
-      "自動運転タクシーの商用サービスが拡大"
+      "AI industry epicenter attracts global investment",
+      "Downtown revitalization plan tackles rising vacancy rates",
+      "Autonomous taxi services expand commercial operations"
     ],
     accentColor: "oklch(0.65 0.18 300)",
     flag: "🇺🇸",
-    searchKeys: ["さんふらんしすこ", "サンフランシスコ", "sanfrancisco", "san francisco", "SF", "シリコンバレー"]
+    searchKeys: ["san francisco", "sanfrancisco", "sf", "silicon valley", "usa"]
   },
   {
     id: "toronto",
-    nameJa: "トロント",
-    nameEn: "Toronto",
+    name: "Toronto",
     country: "Canada",
-    countryJa: "カナダ",
     timezone: "America/Toronto",
     utcOffset: "UTC-5",
     lat: 43.6532,
     lng: -79.3832,
     area: "630",
-    population: "293万人",
-    laborForce: "約160万人",
-    challenge: "住宅価格の高騰と移民受け入れ体制",
+    population: "2.93M",
+    laborForce: "~1.6M",
+    challenge: "Housing affordability crisis and immigration capacity",
     news: [
-      "トロントの多文化共生モデルが世界的に注目",
-      "AI研究のハブとして大学・企業の連携が強化",
-      "不動産市場の調整局面で住宅供給政策を見直し"
+      "Toronto's multicultural model gains global recognition",
+      "AI research hub strengthens university-industry partnerships",
+      "Housing supply policy revised amid market correction"
     ],
     accentColor: "oklch(0.65 0.20 15)",
     flag: "🇨🇦",
-    searchKeys: ["とろんと", "トロント", "toronto", "カナダ", "canada"]
+    searchKeys: ["toronto", "canada"]
   },
   {
     id: "vancouver",
-    nameJa: "バンクーバー",
-    nameEn: "Vancouver",
+    name: "Vancouver",
     country: "Canada",
-    countryJa: "カナダ",
     timezone: "America/Vancouver",
     utcOffset: "UTC-8",
     lat: 49.2827,
     lng: -123.1207,
     area: "115",
-    population: "66万人",
-    laborForce: "約36万人",
-    challenge: "住宅価格の世界的な高さと薬物問題",
+    population: "660K",
+    laborForce: "~360K",
+    challenge: "World-class housing costs and opioid crisis",
     news: [
-      "バンクーバー、世界で最も住みやすい都市トップ5に",
-      "映画・VFX産業が「ハリウッドノース」として成長",
-      "気候変動対策で2030年グリーン目標を設定"
+      "Vancouver ranks in world's top 5 most livable cities",
+      "Film and VFX industry grows as 'Hollywood North'",
+      "Climate action plan sets 2030 green targets"
     ],
     accentColor: "oklch(0.60 0.16 120)",
     flag: "🇨🇦",
-    searchKeys: ["ばんくーばー", "バンクーバー", "vancouver", "カナダ"]
+    searchKeys: ["vancouver", "canada"]
   },
   {
     id: "mexicocity",
-    nameJa: "メキシコシティ",
-    nameEn: "Mexico City",
+    name: "Mexico City",
     country: "Mexico",
-    countryJa: "メキシコ",
     timezone: "America/Mexico_City",
     utcOffset: "UTC-6",
     lat: 19.4326,
     lng: -99.1332,
     area: "1,485",
-    population: "2,181万人",
-    laborForce: "約1,000万人",
-    challenge: "大気汚染と水不足、治安問題",
+    population: "21.81M",
+    laborForce: "~10M",
+    challenge: "Air pollution, water scarcity, and public safety",
     news: [
-      "メキシコシティ、デジタルノマドの人気都市として急上昇",
-      "ニアショアリング効果で製造業投資が急増",
-      "歴史的中心部の修復プロジェクトが進行中"
+      "Mexico City surges in popularity as digital nomad destination",
+      "Nearshoring effect drives manufacturing investment boom",
+      "Historic center restoration project underway"
     ],
     accentColor: "oklch(0.60 0.16 120)",
     flag: "🇲🇽",
-    searchKeys: ["めきしこしてぃ", "メキシコシティ", "mexicocity", "mexico city", "メキシコ"]
+    searchKeys: ["mexico city", "mexicocity", "cdmx", "mexico"]
   },
   // ===== SOUTH AMERICA =====
   {
     id: "saopaulo",
-    nameJa: "サンパウロ",
-    nameEn: "São Paulo",
+    name: "São Paulo",
     country: "Brazil",
-    countryJa: "ブラジル",
     timezone: "America/Sao_Paulo",
     utcOffset: "UTC-3",
     lat: -23.5505,
     lng: -46.6333,
     area: "1,521",
-    population: "1,233万人",
-    laborForce: "約650万人",
-    challenge: "治安問題と経済格差",
+    population: "12.33M",
+    laborForce: "~6.5M",
+    challenge: "Public safety concerns and economic inequality",
     news: [
-      "サンパウロのフィンテック産業が南米最大規模に成長",
-      "都市交通の改善に向けたメトロ拡張計画が進行",
-      "文化・美食の都市として国際的な評価が上昇"
+      "São Paulo fintech industry grows to largest in South America",
+      "Metro expansion plan progresses to improve urban transit",
+      "International recognition rises as culture and food capital"
     ],
     accentColor: "oklch(0.60 0.16 120)",
     flag: "🇧🇷",
-    searchKeys: ["さんぱうろ", "サンパウロ", "saopaulo", "sao paulo", "ブラジル", "brazil"]
+    searchKeys: ["sao paulo", "saopaulo", "brazil"]
   },
   {
     id: "buenosaires",
-    nameJa: "ブエノスアイレス",
-    nameEn: "Buenos Aires",
+    name: "Buenos Aires",
     country: "Argentina",
-    countryJa: "アルゼンチン",
     timezone: "America/Argentina/Buenos_Aires",
     utcOffset: "UTC-3",
     lat: -34.6037,
     lng: -58.3816,
     area: "203",
-    population: "306万人",
-    laborForce: "約160万人",
-    challenge: "ハイパーインフレと経済不安定",
+    population: "3.06M",
+    laborForce: "~1.6M",
+    challenge: "Hyperinflation and economic instability",
     news: [
-      "アルゼンチンの経済改革が進行、インフレ率が低下傾向",
-      "ブエノスアイレスのタンゴ文化がユネスコ遺産に",
-      "テック産業の成長で若年層の雇用が改善"
+      "Argentina's economic reforms progress, inflation trending down",
+      "Buenos Aires tango culture recognized as UNESCO heritage",
+      "Tech industry growth improves youth employment"
     ],
     accentColor: "oklch(0.68 0.14 220)",
     flag: "🇦🇷",
-    searchKeys: ["ぶえのすあいれす", "ブエノスアイレス", "buenosaires", "buenos aires", "アルゼンチン"]
+    searchKeys: ["buenos aires", "buenosaires", "argentina"]
   },
   // ===== OCEANIA =====
   {
     id: "sydney",
-    nameJa: "シドニー",
-    nameEn: "Sydney",
+    name: "Sydney",
     country: "Australia",
-    countryJa: "オーストラリア",
     timezone: "Australia/Sydney",
     utcOffset: "UTC+11",
     lat: -33.8688,
     lng: 151.2093,
     area: "12,368",
-    population: "564万人",
-    laborForce: "約290万人",
-    challenge: "山火事リスクと水資源の確保",
+    population: "5.64M",
+    laborForce: "~2.9M",
+    challenge: "Bushfire risk and water resource security",
     news: [
-      "シドニー、世界最高の都市トップ10にランクイン",
-      "再生可能エネルギーへの転換が加速、太陽光発電が急成長",
-      "オーバーツーリズム対策として観光客分散策を導入"
+      "Sydney ranks in world's top 10 best cities",
+      "Renewable energy transition accelerates with solar boom",
+      "Overtourism measures introduce visitor dispersal strategies"
     ],
     accentColor: "oklch(0.65 0.15 185)",
     flag: "🇦🇺",
-    searchKeys: ["しどにー", "シドニー", "sydney", "オーストラリア", "australia"]
+    searchKeys: ["sydney", "australia"]
   },
   {
     id: "melbourne",
-    nameJa: "メルボルン",
-    nameEn: "Melbourne",
+    name: "Melbourne",
     country: "Australia",
-    countryJa: "オーストラリア",
     timezone: "Australia/Melbourne",
     utcOffset: "UTC+11",
     lat: -37.8136,
     lng: 144.9631,
     area: "9,993",
-    population: "516万人",
-    laborForce: "約270万人",
-    challenge: "都市スプロールと交通インフラの不足",
+    population: "5.16M",
+    laborForce: "~2.7M",
+    challenge: "Urban sprawl and transit infrastructure gaps",
     news: [
-      "メルボルン、世界で最も住みやすい都市に再選出",
-      "アート・カフェ文化が観光の主要な魅力に",
-      "郊外鉄ネットワークの大規模拡張計画が承認"
+      "Melbourne re-elected as world's most livable city",
+      "Art and café culture drives tourism appeal",
+      "Major suburban rail network expansion approved"
     ],
     accentColor: "oklch(0.58 0.18 270)",
     flag: "🇦🇺",
-    searchKeys: ["めるぼるん", "メルボルン", "melbourne", "オーストラリア"]
+    searchKeys: ["melbourne", "australia"]
   },
   {
     id: "auckland",
-    nameJa: "オークランド",
-    nameEn: "Auckland",
+    name: "Auckland",
     country: "New Zealand",
-    countryJa: "ニュージーランド",
     timezone: "Pacific/Auckland",
     utcOffset: "UTC+13",
     lat: -36.8485,
     lng: 174.7633,
     area: "1,086",
-    population: "171万人",
-    laborForce: "約90万人",
-    challenge: "住宅価格の高騰と交通渋滞",
+    population: "1.71M",
+    laborForce: "~900K",
+    challenge: "Housing affordability and traffic congestion",
     news: [
-      "オークランド、生活の質ランキングで世界上位を維持",
-      "テック産業の成長でスタートアップエコシステムが発展",
-      "気候変動対策として沿岸部の防災強化を推進"
+      "Auckland maintains top quality-of-life global ranking",
+      "Tech industry growth develops startup ecosystem",
+      "Coastal disaster resilience strengthened for climate change"
     ],
     accentColor: "oklch(0.66 0.14 160)",
     flag: "🇳🇿",
-    searchKeys: ["おーくらんど", "オークランド", "auckland", "ニュージーランド", "new zealand"]
+    searchKeys: ["auckland", "new zealand", "nz"]
   },
   // ===== AFRICA =====
   {
     id: "cairo",
-    nameJa: "カイロ",
-    nameEn: "Cairo",
+    name: "Cairo",
     country: "Egypt",
-    countryJa: "エジプト",
     timezone: "Africa/Cairo",
     utcOffset: "UTC+2",
     lat: 30.0444,
     lng: 31.2357,
     area: "3,085",
-    population: "2,128万人",
-    laborForce: "約900万人",
-    challenge: "人口過密と水資源の不足",
+    population: "21.28M",
+    laborForce: "~9M",
+    challenge: "Overcrowding and water resource scarcity",
     news: [
-      "新行政首都の建設が進行、政府機関の移転が開始",
-      "エジプトの観光業が回復、ピラミッド訪問者が急増",
-      "再生可能エネルギーへの投資で電力供給を安定化"
+      "New administrative capital construction progresses, government relocation begins",
+      "Egyptian tourism recovers with surge in pyramid visitors",
+      "Renewable energy investment stabilizes power supply"
     ],
     accentColor: "oklch(0.72 0.15 80)",
     flag: "🇪🇬",
-    searchKeys: ["かいろ", "カイロ", "cairo", "エジプト", "egypt"]
+    searchKeys: ["cairo", "egypt"]
   },
   {
     id: "nairobi",
-    nameJa: "ナイロビ",
-    nameEn: "Nairobi",
+    name: "Nairobi",
     country: "Kenya",
-    countryJa: "ケニア",
     timezone: "Africa/Nairobi",
     utcOffset: "UTC+3",
     lat: -1.2921,
     lng: 36.8219,
     area: "696",
-    population: "491万人",
-    laborForce: "約220万人",
-    challenge: "都市化による格差拡大とインフラ不足",
+    population: "4.91M",
+    laborForce: "~2.2M",
+    challenge: "Urbanization-driven inequality and infrastructure gaps",
     news: [
-      "ナイロビ、アフリカのテックハブ「シリコンサバンナ」として成長",
-      "モバイル決済M-Pesaの普及率がさらに上昇",
-      "気候変動対策として都市緑化プロジェクトを推進"
+      "Nairobi grows as Africa's tech hub 'Silicon Savannah'",
+      "M-Pesa mobile payment adoption rate continues to rise",
+      "Urban greening project launched for climate action"
     ],
     accentColor: "oklch(0.60 0.16 120)",
     flag: "🇰🇪",
-    searchKeys: ["ないろび", "ナイロビ", "nairobi", "ケニア", "kenya"]
+    searchKeys: ["nairobi", "kenya"]
   },
   {
     id: "capetown",
-    nameJa: "ケープタウン",
-    nameEn: "Cape Town",
+    name: "Cape Town",
     country: "South Africa",
-    countryJa: "南アフリカ",
     timezone: "Africa/Johannesburg",
     utcOffset: "UTC+2",
     lat: -33.9249,
     lng: 18.4241,
     area: "2,461",
-    population: "471万人",
-    laborForce: "約200万人",
-    challenge: "水不足と経済格差、治安問題",
+    population: "4.71M",
+    laborForce: "~2M",
+    challenge: "Water scarcity, economic inequality, and safety concerns",
     news: [
-      "ケープタウン、アフリカ最高の観光都市に選出",
-      "再生可能エネルギー産業が急成長",
-      "テック産業の成長でアフリカのイノベーション拠点に"
+      "Cape Town named Africa's top tourist destination",
+      "Renewable energy industry experiences rapid growth",
+      "Tech industry growth positions city as African innovation hub"
     ],
     accentColor: "oklch(0.65 0.15 185)",
     flag: "🇿🇦",
-    searchKeys: ["けーぷたうん", "ケープタウン", "capetown", "cape town", "南アフリカ"]
+    searchKeys: ["cape town", "capetown", "south africa"]
   },
   // ===== ADDITIONAL POPULAR CITIES =====
   {
     id: "honolulu",
-    nameJa: "ホノルル",
-    nameEn: "Honolulu",
-    country: "United States",
-    countryJa: "アメリカ（ハワイ）",
+    name: "Honolulu",
+    country: "United States (Hawaii)",
     timezone: "Pacific/Honolulu",
     utcOffset: "UTC-10",
     lat: 21.3069,
     lng: -157.8583,
     area: "177",
-    population: "35万人",
-    laborForce: "約20万人",
-    challenge: "生活コストの高さと気候変動による海面上昇",
+    population: "350K",
+    laborForce: "~200K",
+    challenge: "High cost of living and sea level rise from climate change",
     news: [
-      "ハワイの観光業が完全回復、持続可能な観光を推進",
-      "再生可能エネルギー100%目標に向けた取り組みが加速",
-      "住宅価格の高騰で地元住民の流出が課題に"
+      "Hawaii tourism fully recovers, promoting sustainable travel",
+      "100% renewable energy goal accelerates progress",
+      "Soaring housing prices drive local resident outmigration"
     ],
     accentColor: "oklch(0.65 0.15 185)",
     flag: "🇺🇸",
-    searchKeys: ["ほのるる", "ホノルル", "honolulu", "ハワイ", "hawaii"]
+    searchKeys: ["honolulu", "hawaii", "usa"]
   },
   {
     id: "denver",
-    nameJa: "デンバー",
-    nameEn: "Denver",
+    name: "Denver",
     country: "United States",
-    countryJa: "アメリカ",
     timezone: "America/Denver",
     utcOffset: "UTC-7",
     lat: 39.7392,
     lng: -104.9903,
     area: "401",
-    population: "72万人",
-    laborForce: "約40万人",
-    challenge: "急激な人口増加と水資源の不足",
+    population: "720K",
+    laborForce: "~400K",
+    challenge: "Rapid population growth and water resource scarcity",
     news: [
-      "デンバーのテック産業が急成長、シリコンバレーからの移転が増加",
-      "マイルハイシティの不動産市場が活況",
-      "アウトドア観光とウェルネス産業が経済を牽引"
+      "Denver tech industry booms with Silicon Valley relocations",
+      "Mile High City real estate market remains strong",
+      "Outdoor tourism and wellness industry drive economy"
     ],
     accentColor: "oklch(0.58 0.18 270)",
     flag: "🇺🇸",
-    searchKeys: ["でんばー", "デンバー", "denver", "コロラド", "colorado"]
+    searchKeys: ["denver", "colorado", "usa"]
   },
   {
     id: "miami",
-    nameJa: "マイアミ",
-    nameEn: "Miami",
+    name: "Miami",
     country: "United States",
-    countryJa: "アメリカ",
     timezone: "America/New_York",
     utcOffset: "UTC-5",
     lat: 25.7617,
     lng: -80.1918,
     area: "143",
-    population: "44万人",
-    laborForce: "約25万人",
-    challenge: "海面上昇リスクとハリケーン被害",
+    population: "440K",
+    laborForce: "~250K",
+    challenge: "Sea level rise risk and hurricane damage",
     news: [
-      "マイアミ、暗号資産・Web3産業のハブとして急成長",
-      "ラテンアメリカとの経済的つながりが強化",
-      "気候変動対策として大規模な防潮インフラを建設"
+      "Miami emerges as crypto and Web3 industry hub",
+      "Economic ties with Latin America strengthen",
+      "Large-scale flood barrier infrastructure under construction"
     ],
     accentColor: "oklch(0.65 0.18 300)",
     flag: "🇺🇸",
-    searchKeys: ["まいあみ", "マイアミ", "miami", "フロリダ", "florida"]
+    searchKeys: ["miami", "florida", "usa"]
   },
   {
     id: "lisbon",
-    nameJa: "リスボン",
-    nameEn: "Lisbon",
+    name: "Lisbon",
     country: "Portugal",
-    countryJa: "ポルトガル",
     timezone: "Europe/Lisbon",
     utcOffset: "UTC+0",
     lat: 38.7223,
     lng: -9.1393,
     area: "100",
-    population: "55万人",
-    laborForce: "約30万人",
-    challenge: "住宅価格の高騰とジェントリフィケーション",
+    population: "550K",
+    laborForce: "~300K",
+    challenge: "Housing affordability and gentrification",
     news: [
-      "リスボン、欧州のデジタルノマドの聖地として人気急上昇",
-      "Web Summitの開催地として世界的なテックイベントを誘致",
-      "歴史的街並みの保全と近代化の両立を推進"
+      "Lisbon surges in popularity as Europe's digital nomad capital",
+      "Web Summit continues to attract global tech events",
+      "Balancing historic preservation with modernization"
     ],
     accentColor: "oklch(0.72 0.15 80)",
     flag: "🇵🇹",
-    searchKeys: ["りすぼん", "リスボン", "lisbon", "ポルトガル", "portugal"]
+    searchKeys: ["lisbon", "portugal", "lisboa"]
   },
   {
     id: "helsinki",
-    nameJa: "ヘルシンキ",
-    nameEn: "Helsinki",
+    name: "Helsinki",
     country: "Finland",
-    countryJa: "フィンランド",
     timezone: "Europe/Helsinki",
     utcOffset: "UTC+2",
     lat: 60.1699,
     lng: 24.9384,
     area: "214",
-    population: "66万人",
-    laborForce: "約36万人",
-    challenge: "高い生活コストと冬季の厳しい気候",
+    population: "660K",
+    laborForce: "~360K",
+    challenge: "High cost of living and harsh winter climate",
     news: [
-      "フィンランド、世界幸福度ランキングで7年連続1位",
-      "ヘルシンキのスタートアップエコシステムが急成長",
-      "教育テクノロジーの輸出が新たな経済の柱に"
+      "Finland tops World Happiness Report for 7th consecutive year",
+      "Helsinki startup ecosystem experiences rapid growth",
+      "EdTech exports emerge as new economic pillar"
     ],
     accentColor: "oklch(0.68 0.14 220)",
     flag: "🇫🇮",
-    searchKeys: ["へるしんき", "ヘルシンキ", "helsinki", "フィンランド", "finland"]
+    searchKeys: ["helsinki", "finland"]
   },
   {
     id: "vienna",
-    nameJa: "ウィーン",
-    nameEn: "Vienna",
+    name: "Vienna",
     country: "Austria",
-    countryJa: "オーストリア",
     timezone: "Europe/Vienna",
     utcOffset: "UTC+1",
     lat: 48.2082,
     lng: 16.3738,
     area: "415",
-    population: "197万人",
-    laborForce: "約100万人",
-    challenge: "移民統合と住宅需要の増加",
+    population: "1.97M",
+    laborForce: "~1M",
+    challenge: "Immigrant integration and rising housing demand",
     news: [
-      "ウィーン、世界で最も住みやすい都市ランキング上位を維持",
-      "音楽・文化産業が観光の主要な牽引力に",
-      "公共交通機関の年間パスが格安で市民の移動を支援"
+      "Vienna maintains top position in most livable city rankings",
+      "Music and cultural industry drives tourism",
+      "Affordable annual transit pass supports citizen mobility"
     ],
     accentColor: "oklch(0.62 0.18 340)",
     flag: "🇦🇹",
-    searchKeys: ["うぃーん", "ウィーン", "vienna", "オーストリア", "austria"]
+    searchKeys: ["vienna", "austria", "wien"]
   },
   {
     id: "barcelona",
-    nameJa: "バルセロナ",
-    nameEn: "Barcelona",
+    name: "Barcelona",
     country: "Spain",
-    countryJa: "スペイン",
     timezone: "Europe/Madrid",
     utcOffset: "UTC+1",
     lat: 41.3874,
     lng: 2.1686,
     area: "101",
-    population: "162万人",
-    laborForce: "約85万人",
-    challenge: "オーバーツーリズムと住宅価格の高騰",
+    population: "1.62M",
+    laborForce: "~850K",
+    challenge: "Overtourism and soaring housing prices",
     news: [
-      "バルセロナ、観光客制限策を強化し持続可能な観光を推進",
-      "スマートシティ技術の導入で都市管理を効率化",
-      "テック産業の成長で南欧のイノベーション拠点に"
+      "Barcelona strengthens tourist restrictions for sustainable tourism",
+      "Smart city technology improves urban management efficiency",
+      "Tech industry growth positions city as southern European innovation hub"
     ],
     accentColor: "oklch(0.65 0.20 15)",
     flag: "🇪🇸",
-    searchKeys: ["ばるせろな", "バルセロナ", "barcelona", "スペイン"]
+    searchKeys: ["barcelona", "spain"]
   },
   {
     id: "kualalumpur",
-    nameJa: "クアラルンプール",
-    nameEn: "Kuala Lumpur",
+    name: "Kuala Lumpur",
     country: "Malaysia",
-    countryJa: "マレーシア",
     timezone: "Asia/Kuala_Lumpur",
     utcOffset: "UTC+8",
     lat: 3.1390,
     lng: 101.6869,
     area: "243",
-    population: "183万人",
-    laborForce: "約100万人",
-    challenge: "交通渋滞と急速な都市化による環境問題",
+    population: "1.83M",
+    laborForce: "~1M",
+    challenge: "Traffic congestion and rapid urbanization impacts",
     news: [
-      "クアラルンプール、東南アジアのデジタル経済ハブとして成長",
-      "ペトロナスツインタワー周辺の再開発が進行",
-      "ハラール産業の世界的な中心地としての地位を強化"
+      "Kuala Lumpur grows as Southeast Asian digital economy hub",
+      "Petronas Twin Towers area redevelopment progresses",
+      "Strengthens position as global halal industry center"
     ],
     accentColor: "oklch(0.66 0.14 160)",
     flag: "🇲🇾",
-    searchKeys: ["くあらるんぷーる", "クアラルンプール", "kualalumpur", "kuala lumpur", "KL", "マレーシア", "malaysia"]
+    searchKeys: ["kuala lumpur", "kualalumpur", "kl", "malaysia"]
   },
   {
     id: "hanoi",
-    nameJa: "ハノイ",
-    nameEn: "Hanoi",
+    name: "Hanoi",
     country: "Vietnam",
-    countryJa: "ベトナム",
     timezone: "Asia/Ho_Chi_Minh",
     utcOffset: "UTC+7",
     lat: 21.0285,
     lng: 105.8542,
     area: "3,329",
-    population: "850万人",
-    laborForce: "約450万人",
-    challenge: "大気汚染と急速な都市化",
+    population: "8.5M",
+    laborForce: "~4.5M",
+    challenge: "Air pollution and rapid urbanization",
     news: [
-      "ベトナムのGDP成長率がASEAN最高水準を維持",
-      "ハノイの製造業がサプライチェーン多角化の恩恵を受ける",
-      "都市鉄道の開業で交通インフラが大幅改善"
+      "Vietnam GDP growth rate maintains ASEAN's highest level",
+      "Hanoi manufacturing benefits from supply chain diversification",
+      "Urban rail opening significantly improves transit infrastructure"
     ],
     accentColor: "oklch(0.65 0.20 15)",
     flag: "🇻🇳",
-    searchKeys: ["はのい", "ハノイ", "hanoi", "ベトナム", "vietnam"]
+    searchKeys: ["hanoi", "vietnam"]
   },
 ];
 
 /** Default cities shown on first visit */
-export const DEFAULT_CITY_IDS = ["tokyo", "seattle", "phoenix", "london", "dubai", "delhi"];
+export const DEFAULT_CITY_IDS = ["sanfrancisco", "london", "paris", "bangalore"];
 
-/** Search cities by query (supports Japanese, English, hiragana, katakana) */
+/** Search cities by query */
 export function searchCities(query: string): CityInfo[] {
   if (!query.trim()) return [];
   const q = query.toLowerCase().trim();
   return allCities.filter(city =>
-    city.nameJa.includes(q) ||
-    city.nameEn.toLowerCase().includes(q) ||
-    city.countryJa.includes(q) ||
+    city.name.toLowerCase().includes(q) ||
     city.country.toLowerCase().includes(q) ||
     city.searchKeys.some(key => key.toLowerCase().includes(q))
   );

@@ -80,15 +80,15 @@ export default function Home() {
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
             <Settings2 size={13} style={{ color: "oklch(0.78 0.12 85)" }} />
-            都市を編集
+            Edit Cities
           </button>
           <span className="text-[10px] text-muted-foreground" style={{ fontFamily: "'DM Mono', monospace" }}>
-            {cityCount}都市を表示中
+            Showing {cityCount} {cityCount === 1 ? "city" : "cities"}
           </span>
         </div>
         <div className="hidden lg:flex items-center gap-1.5 text-muted-foreground">
           <span className="text-[10px] tracking-wider uppercase" style={{ fontFamily: "'DM Mono', monospace" }}>
-            横にスクロール
+            Scroll horizontally
           </span>
           <ArrowRight size={12} className="animate-pulse" />
         </div>
@@ -104,7 +104,7 @@ export default function Home() {
             >
               <Clock size={24} className="text-muted-foreground" />
             </div>
-            <p className="text-muted-foreground text-sm">表示する都市がありません</p>
+            <p className="text-muted-foreground text-sm">No cities to display</p>
             <button
               onClick={() => setSelectorOpen(true)}
               className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all text-white"
@@ -114,7 +114,7 @@ export default function Home() {
               }}
             >
               <Plus size={15} />
-              都市を追加する
+              Add a City
             </button>
           </div>
         ) : (
@@ -159,7 +159,7 @@ export default function Home() {
                       <Plus size={20} style={{ color: "oklch(0.78 0.12 85)" }} />
                     </div>
                     <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
-                      都市を追加
+                      Add City
                     </span>
                   </button>
                 </motion.div>
@@ -191,7 +191,7 @@ export default function Home() {
                 className="min-h-[300px] rounded-lg border-2 border-dashed border-border/50 hover:border-border flex flex-col items-center justify-center gap-3 transition-all hover:bg-secondary/20"
               >
                 <Plus size={20} className="text-muted-foreground" />
-                <span className="text-xs text-muted-foreground">都市を追加</span>
+                <span className="text-xs text-muted-foreground">Add City</span>
               </button>
             </div>
 
@@ -220,7 +220,7 @@ export default function Home() {
                 className="w-full py-6 rounded-lg border-2 border-dashed border-border/50 hover:border-border flex items-center justify-center gap-2 transition-all hover:bg-secondary/20"
               >
                 <Plus size={16} className="text-muted-foreground" />
-                <span className="text-xs text-muted-foreground">都市を追加</span>
+                <span className="text-xs text-muted-foreground">Add City</span>
               </button>
             </div>
           </>
@@ -234,7 +234,7 @@ export default function Home() {
             className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase"
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
-            Shin World Clock Observatory
+            Shin World Clock — Global Time Observatory
           </p>
           <p
             className="text-[10px] text-muted-foreground tracking-wider"

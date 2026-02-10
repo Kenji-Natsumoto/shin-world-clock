@@ -1,7 +1,7 @@
 /**
  * CitySelector - Modal dialog for searching and adding cities
  * Design: Observatory aesthetic with search input and region-based browsing
- * Features: text search (JP/EN), region filter, add/remove toggle
+ * Features: text search, region filter, add/remove toggle
  */
 import { useState, useMemo } from "react";
 import { Search, Plus, Check, X, Globe2, RotateCcw } from "lucide-react";
@@ -19,14 +19,14 @@ interface CitySelectorProps {
 
 type Region = "all" | "asia" | "europe" | "americas" | "oceania" | "africa" | "middle_east";
 
-const REGIONS: { key: Region; label: string; labelEn: string }[] = [
-  { key: "all", label: "すべて", labelEn: "All" },
-  { key: "asia", label: "アジア", labelEn: "Asia" },
-  { key: "europe", label: "ヨーロッパ", labelEn: "Europe" },
-  { key: "americas", label: "アメリカ大陸", labelEn: "Americas" },
-  { key: "middle_east", label: "中東", labelEn: "Middle East" },
-  { key: "oceania", label: "オセアニア", labelEn: "Oceania" },
-  { key: "africa", label: "アフリカ", labelEn: "Africa" },
+const REGIONS: { key: Region; label: string }[] = [
+  { key: "all", label: "All" },
+  { key: "asia", label: "Asia" },
+  { key: "europe", label: "Europe" },
+  { key: "americas", label: "Americas" },
+  { key: "middle_east", label: "Middle East" },
+  { key: "oceania", label: "Oceania" },
+  { key: "africa", label: "Africa" },
 ];
 
 function getRegion(city: CityInfo): Region {
@@ -66,7 +66,7 @@ export default function CitySelector({
       const aSelected = isSelected(a.id) ? 0 : 1;
       const bSelected = isSelected(b.id) ? 0 : 1;
       if (aSelected !== bSelected) return aSelected - bSelected;
-      return a.nameJa.localeCompare(b.nameJa, "ja");
+      return a.name.localeCompare(b.name, "en");
     });
     return results;
   }, [query, region, isSelected]);
@@ -96,7 +96,7 @@ export default function CitySelector({
               className="text-lg font-bold text-foreground tracking-wide"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              都市を選択
+              Select Cities
             </h2>
           </div>
           <div className="flex items-center gap-2">
@@ -104,10 +104,10 @@ export default function CitySelector({
               onClick={onReset}
               className="flex items-center gap-1.5 px-2.5 py-1.5 text-[10px] rounded-md border border-border/60 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
               style={{ fontFamily: "'DM Mono', monospace" }}
-              title="デフォルトに戻す"
+              title="Reset to defaults"
             >
               <RotateCcw size={11} />
-              リセット
+              Reset
             </button>
             <button
               onClick={onClose}
@@ -129,7 +129,7 @@ export default function CitySelector({
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="都市名で検索（日本語・英語対応）"
+              placeholder="Search by city or country name..."
               className="w-full pl-9 pr-4 py-2.5 rounded-lg bg-secondary/50 border border-border/60 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/40 transition-all"
               autoFocus
             />
@@ -169,7 +169,7 @@ export default function CitySelector({
           <div className="space-y-1.5">
             {filteredCities.length === 0 && (
               <div className="text-center py-8 text-muted-foreground text-sm">
-                該当する都市が見つかりません
+                No matching cities found
               </div>
             )}
             {filteredCities.map((city) => {
@@ -194,7 +194,7 @@ export default function CitySelector({
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-medium text-foreground truncate">
-                        {city.nameJa}
+                        {city.name}
                       </span>
                       <span
                         className="text-[10px] text-muted-foreground tracking-wider"
@@ -204,7 +204,7 @@ export default function CitySelector({
                       </span>
                     </div>
                     <p className="text-[11px] text-muted-foreground truncate">
-                      {city.nameEn} · {city.countryJa}
+                      {city.country}
                     </p>
                   </div>
                   <div

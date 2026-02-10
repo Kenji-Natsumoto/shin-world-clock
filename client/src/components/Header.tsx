@@ -26,13 +26,13 @@ export default function Header() {
               className="text-lg sm:text-xl font-bold tracking-[0.08em] text-foreground"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              シン・世界時計
+              Shin World Clock
             </h1>
             <p
               className="text-[8px] sm:text-[9px] text-muted-foreground tracking-[0.25em] uppercase hidden sm:block"
               style={{ fontFamily: "'DM Mono', monospace" }}
             >
-              Shin World Clock Observatory
+              Global Time Observatory
             </p>
           </div>
         </div>

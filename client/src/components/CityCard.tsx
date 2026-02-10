@@ -47,7 +47,7 @@ export default function CityCard({ city, onRemove }: CityCardProps) {
             onRemove();
           }}
           className="absolute top-2 right-2 z-10 w-6 h-6 rounded-full flex items-center justify-center bg-background/80 backdrop-blur-sm border border-border/60 text-muted-foreground hover:text-destructive hover:border-destructive/40 transition-all opacity-0 group-hover:opacity-100 sm:opacity-60"
-          title="この都市を削除"
+          title="Remove this city"
         >
           <X size={12} />
         </button>
@@ -74,10 +74,10 @@ export default function CityCard({ city, onRemove }: CityCardProps) {
                   className="text-xl font-bold tracking-wide text-foreground"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
-                  {city.nameJa}
+                  {city.name}
                 </h2>
                 <p className="text-[10px] text-muted-foreground tracking-[0.15em] uppercase" style={{ fontFamily: "'DM Mono', monospace" }}>
-                  {city.nameEn} · {city.utcOffset}
+                  {city.country} · {city.utcOffset}
                 </p>
               </div>
             </div>
@@ -118,16 +118,16 @@ export default function CityCard({ city, onRemove }: CityCardProps) {
             <MapPin size={12} style={{ color: city.accentColor }} className="flex-shrink-0" />
             <span style={{ fontFamily: "'DM Mono', monospace" }}>{city.area} km²</span>
             <span className="opacity-30 mx-0.5">|</span>
-            <span className="text-[11px]">{city.countryJa}</span>
+            <span className="text-[11px]">{city.country}</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <Users size={12} style={{ color: city.accentColor }} className="flex-shrink-0" />
-            <span>総人口</span>
+            <span>Population</span>
             <span className="font-medium text-foreground" style={{ fontFamily: "'DM Mono', monospace" }}>{city.population}</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <Briefcase size={12} style={{ color: city.accentColor }} className="flex-shrink-0" />
-            <span>労働人口</span>
+            <span>Labor Force</span>
             <span className="font-medium text-foreground" style={{ fontFamily: "'DM Mono', monospace" }}>{city.laborForce}</span>
           </div>
           <div className="flex items-start gap-2 text-muted-foreground">
@@ -202,7 +202,7 @@ export default function CityCard({ city, onRemove }: CityCardProps) {
             }}
           >
             <Compass size={14} style={{ color: city.accentColor }} className="group-hover/btn:animate-spin" />
-            <span>Google マップで見る</span>
+            <span>View on Google Maps</span>
             <ExternalLink size={11} className="opacity-40 group-hover/btn:opacity-80 transition-opacity" />
           </a>
         </div>

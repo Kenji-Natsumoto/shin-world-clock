@@ -42,7 +42,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-display: 'Cormorant Garamond', serif;
   --font-mono: 'DM Mono', monospace;
-  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --color-gold: oklch(0.78 0.12 85);
   --color-gold-dim: oklch(0.58 0.10 85);
   --color-gold-bright: oklch(0.88 0.14 85);
@@ -131,7 +131,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),

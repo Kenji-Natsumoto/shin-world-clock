@@ -54,7 +54,7 @@ export default function DigitalClock({ timezone, accentColor }: DigitalClockProp
 function getFormattedTime(timezone: string) {
   const now = new Date();
 
-  const timeFormatter = new Intl.DateTimeFormat("ja-JP", {
+  const timeFormatter = new Intl.DateTimeFormat("en-US", {
     timeZone: timezone,
     hour: "2-digit",
     minute: "2-digit",
@@ -62,11 +62,11 @@ function getFormattedTime(timezone: string) {
     hour12: false,
   });
 
-  const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
+  const dateFormatter = new Intl.DateTimeFormat("en-US", {
     timeZone: timezone,
     year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
+    month: "short",
+    day: "numeric",
     weekday: "short",
   });
 
