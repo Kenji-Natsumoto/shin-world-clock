@@ -26,7 +26,7 @@ export default function Header() {
               className="text-lg sm:text-xl font-bold tracking-[0.08em] text-foreground"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Shin World Clock
+              Vibe O'Clock
             </h1>
             <p
               className="text-[8px] sm:text-[9px] text-muted-foreground tracking-[0.25em] uppercase hidden sm:block"

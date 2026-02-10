@@ -12,6 +12,7 @@ import Header from "@/components/Header";
 import CityCard from "@/components/CityCard";
 import CitySelector from "@/components/CitySelector";
 import { useCitySelection } from "@/hooks/useCitySelection";
+import VibeFlash from "@/components/VibeFlash";
 
 const HERO_DARK = "https://private-us-east-1.manuscdn.com/sessionFile/Ytf6nBhd7ERs5uIRdKCdGL/sandbox/XKXIIZumHQ7YOxg6AP8n2y-img-1_1770433490000_na1fn_aGVyby1iZy1kYXJr.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvWXRmNm5CaGQ3RVJzNXVJUmRLQ2RHTC9zYW5kYm94L1hLWElJWnVtSFE3WU94ZzZBUDhuMnktaW1nLTFfMTc3MDQzMzQ5MDAwMF9uYTFmbl9hR1Z5YnkxaVp5MWtZWEpyLmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=NLYK9NKYhXDqsxNzItXfzCXiQQK046n9gn193kcwteXm0Cj-XnlN1wSzOfDA3SSYPK1VNOwPXcA4r7AcpXWss9uyRXlwZrbIxbcjG1fjYKpuVuq81SOgUINrg8Vp8BgE5vhXi7s2sr8uW~pTiP-vBspw4gXt12BE-ikEDcZWYEkhx6AOP0VDgAbNoYC-pFmlH1-wxJ0fFms8sFhMvY6SyKx~tY9QIsH7tzDh7qix3gXKitz~BVj74WCYIqWNRmdaJ2e~JVGkUFrWNX89Oet70nbq8snAw1ihMFQKlpldtqabTpXcKRKgt6KjNq7oZA5BWTfj6DGSxgOnnP7hSWSZQw__";
 
@@ -36,6 +37,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
+      <VibeFlash />
 
       {/* Hero Banner */}
       <div className="relative w-full h-24 sm:h-32 lg:h-36 overflow-hidden">
@@ -234,7 +236,7 @@ export default function Home() {
             className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase"
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
-            Shin World Clock — Global Time Observatory
+            Vibe O'Clock — Global Time Observatory
           </p>
           <p
             className="text-[10px] text-muted-foreground tracking-wider"

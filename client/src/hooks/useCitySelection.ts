@@ -6,7 +6,7 @@ import { useState, useEffect, useCallback } from "react";
 import { allCities, DEFAULT_CITY_IDS, getAccentColor } from "@/lib/cityData";
 import type { CityInfo } from "@/lib/cityData";
 
-const STORAGE_KEY = "shin-world-clock-en-cities";
+const STORAGE_KEY = "vibe-o-clock-cities";
 
 export function useCitySelection() {
   const [selectedIds, setSelectedIds] = useState<string[]>(() => {
